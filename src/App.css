@@ -1,0 +1,16 @@
+/* react-Bootstrap */
+
+.text-red{
+    color: red;
+}
+
+/* Card container*/
+.gridcard{
+  display: grid;
+  grid-template-columns:auto auto auto  ;
+  row-gap: 50px;
+}
+
+#point{
+  cursor: pointer !important;
+}

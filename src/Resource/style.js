@@ -1,0 +1,1 @@
+export const navlink_style=({ isActive }) => ({color: isActive ? 'red' : 'white'});
