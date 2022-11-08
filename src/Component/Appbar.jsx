@@ -1,4 +1,5 @@
 import Button from 'react-bootstrap/Button';
+import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -8,8 +9,18 @@ import { Link, NavLink } from 'react-router-dom';
 import { images } from '../Resource/assests';
 import { navlink_style } from '../Resource/style';
 
+
+
+
 function NavScrollExample() {
+  const [mode,setMode]=useState(true);
+  document.body.style.setProperty("background-color", mode?"#000":"#FFF", "important");
+  document.body.style.setProperty("color", mode?"#FFF":"#000", "important");
+  const showing =(e)=>{
+    setMode(e.target.checked)
+}
   return (
+
     <Navbar bg="dark" expand="lg" variant="dark">
       <Container fluid>
         <Link to="/"> <img src={images.netflix_logo} height="40px" alt="" /> </Link>
@@ -43,6 +54,11 @@ function NavScrollExample() {
             <NavLink to="/contact" className='text-decoration-none  m-2' id="point" style={navlink_style} >Contact</NavLink>
             <NavLink to="/player" className='text-decoration-none  m-2' style={navlink_style} >Player</NavLink>
           </Nav>
+
+          <div className="form-check form-switch me-3">
+                <input className="form-check-input" type="checkbox" id="flexSwitchCheckChecked" onChange={showing} checked={mode} />
+                    <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Mode</label>
+            </div>
 
           <Form className="d-flex">
             <Form.Control

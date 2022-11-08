@@ -1,5 +1,7 @@
 /* react-Bootstrap */
-
+body{
+  color: white !important;
+}
 .text-red{
     color: red;
 }
@@ -7,10 +9,74 @@
 /* Card container*/
 .gridcard{
   display: grid;
-  grid-template-columns:auto auto auto  ;
-  row-gap: 50px;
+  grid-template-columns:auto auto auto auto ;
+  gap: 30px;
+  justify-content: center;
 }
 
 #point{
   cursor: pointer !important;
+}
+
+.player_page{
+  margin-top: 30px;
+  height: 70vh;
+  display: flex;
+}
+.player_right{
+  height: 100%;
+  width: 70%;
+}
+.player_right iframe{
+  border-radius: 15px;
+}
+.player_left{
+  margin-left: 10px;
+  height: 100%;
+  width: 30%;
+  overflow-y: scroll;
+}
+
+.movie_typecard{
+  cursor: pointer;
+  width: 95%;
+  height: 120px;
+  border-radius: 10px;
+  background: rgb(70, 70, 70);
+}
+.para_desc{
+  display: inline-block;
+    width: 220px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+.movie_card{
+  width: 15em;
+  background: rgb(57, 57, 57) !important;
+}
+@media only screen and (max-width: 600px){
+  .movie_card{
+    width: 90%;
+    background: rgb(57, 57, 57) !important;
+  }
+  .gridcard{
+    grid-template-columns:auto ;
+  }
+  .player_page{
+    display: block;
+  }
+  .player_right{
+    height: 50%;
+    width: 100%;
+  }
+  .player_left{
+    margin: 0px;
+    width: 100%;
+    overflow-y: none;
+  }
+}
+
+.hook{
+  height: 90vh;
 }
